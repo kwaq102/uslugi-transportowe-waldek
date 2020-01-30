@@ -1,0 +1,1394 @@
+/*font-family: 'Roboto', sans-serif;*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.clearfix::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    max-width: 1920px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 140%;
+    text-align: justify;
+    letter-spacing: 1px;
+}
+
+.wrapper h1 {
+    font-size: 70px;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.hamburger {
+    display: none;
+}
+
+.arrow {
+    position: fixed;
+    bottom: 5%;
+    right: 1%;
+    transform: scale(0);
+    transition: .1s linear;
+    opacity: .3;
+    z-index: 5;
+}
+
+.arrow:hover {
+    opacity: 1;
+}
+
+.arrow.arrow-active {
+    transform: scale(1);
+}
+
+.fas.fa-arrow-circle-up {
+    font-size: 55px;
+    transition: .2s;
+    color: #000;
+}
+
+.fas.fa-arrow-circle-up:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+header {
+    position: relative;
+    height: 100vh;
+    background-image: url('../images/truck3.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.home h1 {
+    position: absolute;
+    width: 50%;
+    margin: 0 60px;
+    border-bottom: 2px solid white;
+    top: 30%;
+    left: 3%;
+    font-size: 70px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    z-index: 1;
+}
+
+.home h2 {
+    position: absolute;
+    width: 50%;
+    margin: 0 60px;
+    padding-left: 50px;
+    padding-right: 50px;
+    top: 52%;
+    left: 3%;
+    font-size: 60px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 140%;
+    color: white;
+    z-index: 1;
+}
+
+.bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    /*    background-color: rgba(0, 0, 0, 0.6);*/
+    padding-right: 20px;
+    /* padding-left: 50%; */
+    background-image: linear-gradient(black, rgba(0, 0, 0, 0.65));
+    z-index: 2;
+    transition: .2s linear;
+}
+
+nav.hidden {
+    top: -55px;
+    transition: .2s linear;
+}
+
+nav.hidden:hover {
+    top: 0;
+}
+
+nav .nav,
+div.nav-phone {
+    width: 40%;
+    flex-grow: 1;
+}
+
+div.nav-phone {
+    display: flex;
+    align-items: center;
+}
+
+div.nav-phone p {
+    width: 24%;
+    padding-left: 5px;
+    color: white;
+    font-size: 14px;
+}
+
+div.nav-phone img {
+    width: 13%;
+    padding-left: 10%;
+}
+
+nav div.nav a {
+    display: inline-block;
+    width: 24%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    text-transform: uppercase;
+    transition: .1s linear;
+}
+
+nav div.nav a:hover {
+    font-size: 30px;
+    /* color: red; */
+}
+
+.about {
+    max-width: 1600px;
+    margin-top: 50px;
+    padding-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 40px;
+    /*    background-color: rgba(217, 217, 217, 0.1);*/
+    background-color: #F1F1F1;
+}
+
+.text {
+    float: left;
+    width: 50%;
+    padding-top: 15px;
+    padding-left: 30px;
+    transform: translateX(-100vw);
+    transition: 1s;
+}
+
+.about img {
+    float: left;
+    width: 40%;
+    margin-left: 80px;
+    border-radius: 20px;
+    transform: translateX(100vw);
+    transition: 1s;
+}
+
+.text.active,
+.about img.active {
+    transform: translateX(0);
+}
+
+.offer {
+    max-width: 1600px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 40px;
+    padding-top: 30px;
+    /*    background-color: rgba(217, 217, 217, 0.1);*/
+    background-color: #F1F1F1;
+}
+
+.offer img {
+    float: right;
+    width: 40%;
+    margin-left: 30px;
+    border-radius: 20px;
+    transition: 1s;
+    transform: translateX(-100vw);
+}
+
+.offer p {
+    float: right;
+    width: 50%;
+    padding-left: 80px;
+    padding-top: 15px;
+    transition: 1s;
+    transform: translateX(100vw);
+}
+
+.offer img.active,
+.offer p.active {
+    transform: translateX(0);
+}
+
+.slogan {
+    text-align: center;
+    background-attachment: fixed;
+    background-image: url(../images/truck5.jpg);
+    background-size: 100%;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    margin-bottom: 50px;
+}
+
+.slogan p {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    font-size: 60px;
+    text-transform: uppercase;
+    line-height: 140%;
+    color: white;
+}
+
+.slogan p.author {
+    /* padding-bottom: 100px; */
+    font-size: 30px;
+}
+
+.contact {
+    max-width: 1600px;
+    margin: 50px auto;
+    padding-bottom: 40px;
+    background-color: #F1F1F1;
+}
+
+.contact h1 {
+    margin-bottom: 30px;
+    padding-top: 60px;
+}
+
+.contact div.wrap,
+.contact div.address {
+    float: left;
+    width: 50%;
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    /*    background-color: rgba(217, 217, 217, 0.1);*/
+    background-color: #F1F1F1;
+}
+
+.location,
+.phone,
+.email {
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+.location i,
+.phone i,
+.email i {
+    width: 20%;
+    font-size: 70px;
+    float: left;
+    padding-right: 20px;
+}
+
+.location p,
+.phone p,
+.email p {
+    float: left;
+    font-size: 24px;
+    line-height: 35px;
+    text-transform: none;
+}
+
+.location p {
+    text-transform: uppercase;
+}
+
+.phone p,
+.email p {
+    line-height: 70px;
+}
+
+.contact div.wrap input,
+.contact div.wrap textarea,
+.contact button {
+    width: 90%;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.contact input {
+    margin-bottom: 10px;
+}
+
+.contact textarea {
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.contact button {
+    font-weight: bold;
+    border: solid 2px rgb(217, 217, 217);
+    letter-spacing: 4px;
+    /*    background-color: rgb(217, 217, 217);*/
+    background-color: transparent;
+    text-transform: uppercase;
+    line-height: 140%;
+}
+
+.contact button:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+.why-me {
+    position: relative;
+    /* overflow: hidden; */
+    height: 400px;
+}
+
+.why-me h3 {
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 30px 0 20px 0;
+}
+
+.catalog {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.catalog1 {
+    transform: scale(0);
+    transition: .3s linear;
+}
+
+.catalog1.active-catalog {
+    transform: scale(1)
+}
+
+.images {
+    position: relative;
+    width: 100%;
+    height: 30%;
+}
+
+.images img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+}
+
+.catalog p {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 16px;
+    padding-bottom: 20px;
+}
+
+.catalog p.why-me-text {
+    font-size: 12px;
+}
+
+.experience,
+.on-time,
+.honest,
+.competitive {
+    width: 10%;
+    margin: 10px;
+    transition: .2s linear;
+}
+
+.experience:hover,
+.on-time:hover,
+.honest:hover,
+.competitive:hover {
+    transform: scale(1.1);
+    cursor: default;
+}
+
+.bg-why-me {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../images/truckbg.jpg);
+    background-position: center;
+    /* background-attachment:  */
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100%;
+    width: 100%;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+footer {
+    width: 100%;
+    /* height: 30vh; */
+    max-width: 1920px;
+    padding-bottom: 5px;
+    background-color: #000;
+    color: white;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    background-color: #101010;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* height: 30vh; */
+}
+
+.left,
+.right {
+    flex-basis: 30%;
+}
+
+.footer-img img {
+    width: 80%;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.left a {
+    flex-basis: 20%;
+    align-self: center;
+    width: 30%;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    text-transform: uppercase;
+    transition: font-size .1s linear;
+}
+
+.left a:hover {
+    font-size: 26px;
+    border-bottom: 1px solid red;
+}
+
+.right {
+    text-transform: uppercase;
+    cursor: default;
+}
+
+.right div hr {
+    margin: 0 auto;
+    width: 50%;
+    border: 1px solid red
+}
+
+.right p {
+    font-size: 16px;
+    padding: 5px 0;
+}
+
+.right p:nth-of-type(2) {
+    font-weight: bold;
+}
+
+div.footer p {
+    display: inline-block;
+    margin: 20px 0px;
+
+    font-size: 12px;
+}
+
+div.footer p:nth-child(1) {
+    border-right: 2px solid red;
+    padding: 5px 5px;
+}
+
+@media (max-width: 1700px) {
+    .home h1 {
+        font-size: 60px;
+    }
+
+    .home h2 {
+        font-size: 50px;
+    }
+
+    nav div.nav a {
+        font-size: 22px;
+    }
+
+    nav div.nav a:hover {
+        font-size: 24px;
+    }
+
+
+    div.nav-phone p {
+        font-size: 10px;
+    }
+
+    .wrapper h1 {
+        font-size: 60px;
+    }
+
+
+    .why-me h3 {
+        font-size: 30px;
+    }
+
+    .catalog p {
+        font-size: 14px;
+    }
+
+    .catalog p.why-me-text {
+        font-size: 10px;
+    }
+
+    .about,
+    .offer,
+    .contact {
+        max-width: 1500px;
+    }
+
+    .fa-arrow-circle-up {
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 1500px) {
+    .home h1 {
+        font-size: 50px;
+    }
+
+    .home h2 {
+        font-size: 40px;
+    }
+
+    nav div.nav a {
+        font-size: 18px;
+    }
+
+    nav div.nav a:hover {
+        font-size: 20px;
+    }
+
+    div.nav-phone p {
+        font-size: 10px;
+    }
+
+    .wrapper {
+        font-size: 18px;
+    }
+
+    .wrapper h1 {
+        font-size: 50px;
+    }
+
+    .slogan p {
+        font-size: 50px;
+    }
+
+    .slogan p.author {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 1400px) {
+
+    .about,
+    .offer,
+    .contact {
+        max-width: 1300px;
+    }
+
+    .fa-arrow-circle-up {
+        font-size: 35px;
+    }
+
+    .catalog p {
+        font-size: 12px;
+    }
+
+    .catalog p.why-me-text {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 1280px) {
+    div.nav-phone p {
+        width: 30%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .home h1 {
+        width: 60%;
+        /* font-size: 45px; */
+    }
+
+    .home h2 {
+        width: 60%;
+    }
+
+    div.nav-phone p {
+        width: 30%;
+    }
+
+    .experience,
+    .on-time,
+    .honest,
+    .competitive {
+        width: 15%;
+    }
+}
+
+@media (max-width: 1025px) {
+    .fas.fa-arrow-circle-up {
+        font-size: 45px;
+    }
+
+    header {
+        background-attachment: scroll;
+        background-position: center;
+    }
+
+    .home h1 {
+        width: 80%;
+        top: 42%;
+        left: 50%;
+        margin: 0;
+        transform: translateX(-50%);
+        text-align: center;
+        font-size: 45px;
+    }
+
+    .home h2 {
+        width: 80%;
+        top: 55%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        font-size: 32px;
+    }
+
+    nav {
+        display: block;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+        transition: .2s linear;
+    }
+
+    nav.hidden {
+        top: 0;
+    }
+
+    div.nav {
+        display: block;
+        width: 100%;
+        margin-top: 2%;
+    }
+
+    div.nav-phone {
+        display: flex;
+        align-items: center;
+        padding-top: 3%;
+    }
+
+    div.nav-phone p {
+        width: 100%;
+        padding-left: 5px;
+        color: white;
+        font-size: 10px;
+    }
+
+    div.nav-phone img {
+        width: 18%;
+        padding-left: 10%;
+    }
+
+    nav div.nav a {
+        display: none;
+        width: 100%;
+        font-size: 28px;
+    }
+
+    nav div.nav.show a {
+        display: block;
+    }
+
+    nav div.nav a:hover {
+        font-size: 30px;
+        /* color: red; */
+    }
+
+    .text,
+    .about img,
+    .offer img,
+    .offer p {
+        transform: translateX(0);
+    }
+
+    .slogan {
+        background-attachment: scroll;
+        background-position: center;
+    }
+
+    .slogan p {
+        padding-top: 50px;
+        padding-bottom: 20px;
+        font-size: 40px;
+    }
+
+    .location i,
+    .phone i,
+    .email i {
+        color: black;
+    }
+
+    .experience,
+    .on-time,
+    .honest,
+    .competitive {
+        width: 15%;
+    }
+
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 3%;
+        right: 3%;
+        font-size: 40px;
+        line-height: 50px;
+        z-index: 10;
+        cursor: pointer;
+    }
+
+    .fas {
+        display: block;
+        color: white;
+    }
+
+    i.show {
+        display: none;
+    }
+
+    .footer-img img {
+        width: 60%;
+    }
+
+    .left a {
+        font-size: 20px;
+    }
+
+    .left a:hover {
+        font-size: 22px;
+    }
+
+    .right p {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 768px) {
+    .arrow {
+        right: 2%;
+    }
+
+    .fas.fa-arrow-circle-up {
+        font-size: 25px;
+    }
+
+    .wrapper h1 {
+        padding-bottom: 30px;
+    }
+
+    .about,
+    .offer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .text,
+    .about img,
+    .offer img,
+    .offer p {
+        width: 100%;
+        margin: 0;
+        padding: 10px 40px;
+    }
+
+    .text {
+        font-size: 14px;
+    }
+
+    .about img,
+    .offer img {
+        width: 80%;
+    }
+
+    .slogan {
+        margin-bottom: 40px;
+    }
+
+    .slogan p {
+        font-size: 30px;
+    }
+
+    .slogan p.author {
+        font-size: 18px;
+    }
+
+    .why-me h3 {
+        padding: 20px 0 30px 0;
+        background-color: #F1F1F1;
+    }
+
+    .experience,
+    .on-time,
+    .honest,
+    .competitive {
+        width: 20%;
+    }
+
+    .images {
+        height: 20%;
+    }
+
+    .images img {
+        width: 30%;
+    }
+
+    .contact {
+        margin: 0 auto;
+    }
+
+    .contact h1 {
+        font-size: 45px;
+        margin-bottom: 20px;
+        padding-top: 40px;
+    }
+
+    .location,
+    .phone,
+    .email {
+        margin-left: 30px;
+    }
+
+    .location i,
+    .phone i,
+    .email i {
+        font-size: 45px;
+        padding-right: 10px;
+    }
+
+    .location p {
+        line-height: 22.5px;
+        font-size: 18px;
+    }
+
+    .phone p,
+    .email p {
+        font-size: 18px;
+        line-height: 45px;
+    }
+
+    .contact div.wrap input,
+    .contact div.wrap textarea,
+    .contact button {
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    .contact textarea {
+        height: 100px;
+    }
+}
+
+@media(max-width: 823px) and (orientation: landscape) {
+    .arrow {
+        right: 2%;
+    }
+
+    .fas.fa-arrow-circle-up {
+        font-size: 25px;
+    }
+
+    .wrapper h1 {
+        font-size: 40px;
+        padding: 20px 0 20px;
+    }
+
+    .home h1 {
+        top: 30%;
+        font-size: 40px;
+    }
+
+    .home h2 {
+        font-size: 30px;
+    }
+
+    .about,
+    .offer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .text,
+    .about img,
+    .offer img,
+    .offer p {
+        width: 100%;
+        margin: 0;
+        padding: 10px 40px;
+    }
+
+    .text,
+    .offer p {
+        font-size: 14px;
+    }
+
+    .about img,
+    .offer img {
+        width: 80%;
+    }
+
+    .slogan {
+        margin-bottom: 40px;
+    }
+
+    .slogan p {
+        width: 60%;
+        font-size: 30px;
+    }
+
+    .slogan p.author {
+        font-size: 18px;
+    }
+
+    .catalog1 {
+        transform: scale(1);
+    }
+
+    .why-me h3 {
+        padding: 20px 0 30px 0;
+        background-color: #F1F1F1;
+    }
+
+    .experience,
+    .on-time,
+    .honest,
+    .competitive {
+        width: 20%;
+    }
+
+    .images {
+        height: 20%;
+    }
+
+    .images img {
+        width: 30%;
+    }
+
+    .contact {
+        margin: 0 auto;
+    }
+
+    .contact h1 {
+        font-size: 45px;
+        margin-bottom: 20px;
+        padding-top: 40px;
+    }
+
+    .location,
+    .phone,
+    .email {
+        margin-left: 30px;
+    }
+
+    .location i,
+    .phone i,
+    .email i {
+        font-size: 45px;
+        padding-right: 10px;
+    }
+
+    .location p {
+        line-height: 22.5px;
+        font-size: 18px;
+    }
+
+    .phone p,
+    .email p {
+        font-size: 18px;
+        line-height: 45px;
+    }
+
+    .contact div.wrap input,
+    .contact div.wrap textarea,
+    .contact button {
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    .contact h1 {
+        font-size: 40px;
+    }
+
+    .contact textarea {
+        height: 100px;
+    }
+
+    .footer-img img {
+        width: 50%;
+    }
+
+    .left a {
+        font-size: 18px;
+    }
+
+    .left a:hover {
+        font-size: 20px;
+    }
+
+    .right p {
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 736px) and (orientation: landscape) {
+    .hamburger {
+        top: 3%;
+        font-size: 30px;
+    }
+
+    .wrapper h1 {
+        font-size: 30px;
+    }
+
+    .home h1 {
+        font-size: 30px;
+    }
+
+    .home h2 {
+        font-size: 20px;
+    }
+
+    nav div.nav a {
+        font-size: 24px;
+    }
+
+    .location,
+    .phone,
+    .email {
+        margin-left: 10px;
+    }
+
+    .location i,
+    .phone i,
+    .email i {
+        font-size: 35px;
+    }
+
+    .location p {
+        font-size: 16px;
+    }
+
+    .phone p,
+    .email p {
+        font-size: 16px;
+    }
+
+    .left a {
+        font-size: 16px;
+    }
+
+    .left a:hover {
+        font-size: 18px;
+    }
+
+    .right p {
+        font-size: 10px;
+    }
+}
+
+@media(max-width: 640px) and (orientation: landscape) {
+    .wrapper {
+        line-height: 110%;
+    }
+
+    .slogan {
+        margin-bottom: 30px;
+    }
+
+    .slogan p {
+        width: 70%;
+        font-size: 26px;
+    }
+
+    .slogan p.author {
+        font-size: 16px;
+    }
+
+    .experience,
+    .on-time,
+    .honest,
+    .competitive {
+        width: 25%;
+    }
+
+    .why-me {
+        height: 300px;
+    }
+
+    .catalog p {
+        padding-bottom: 10px;
+        font-size: 10px;
+    }
+
+    .catalog p.why-me-text {
+        font-size: 7px;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact div.wrap,
+    .contact div.address {
+        width: 100%;
+    }
+
+    .contact div.wrap {
+        margin-bottom: 40px;
+    }
+
+    .contact div.address {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .location i,
+    .phone i,
+    .email i {
+        font-size: 40px;
+    }
+
+    .location p {
+        font-size: 16px;
+    }
+
+    .phone p,
+    .email p {
+        font-size: 16px;
+    }
+
+    .left,
+    .right {
+        flex-basis: 50%;
+    }
+
+    .footer-img img {
+        width: 90%;
+    }
+}
+
+@media(max-width: 415px) and (orientation: portrait) {
+    .wrapper {
+        line-height: 120%;
+    }
+
+    .hamburger {
+        top: 2%;
+        font-size: 20px;
+    }
+
+    div.nav-phone p {
+        font-size: 8px;
+    }
+
+    .wrapper h1 {
+        font-size: 25px;
+        padding: 0;
+    }
+
+    .home h1 {
+        font-size: 25px;
+    }
+
+    .home h2 {
+        font-size: 20px;
+        width: 90%;
+    }
+
+    nav div.nav a {
+        font-size: 20px;
+    }
+
+    nav div.nav a:hover {
+        font-size: 24px;
+    }
+
+
+    .about,
+    .offer,
+    .contact {
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+
+    .about img,
+    .offer img {
+        width: 90%;
+    }
+
+    .text,
+    .offer p {
+        font-size: 12px;
+    }
+
+    .slogan {
+        margin: 0;
+        height: 150px;
+    }
+
+    .slogan p {
+        padding: 10px 0 0 0;
+        width: 60%;
+        font-size: 20px;
+    }
+
+    .slogan p.author {
+        font-size: 10px;
+        padding-top: 20px;
+    }
+
+    .why-me {
+        height: 500px;
+    }
+
+    .catalog {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    .why-me h3 {
+        font-size: 20px;
+    }
+
+    .experience,
+    .on-time,
+    .honest,
+    .competitive {
+        width: 40%;
+        flex-grow: 1;
+        flex-shrink: 0;
+        height: 200px;
+        align-self: flex-start;
+    }
+
+    .bg-why-me {
+        background-image: url(../images/truckbg_mobile.png);
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact h1 {
+        padding-top: 20px;
+    }
+
+    .contact div.wrap,
+    .contact div.address {
+        width: 100%;
+    }
+
+    .contact div.wrap {
+        margin-bottom: 40px;
+    }
+
+    .contact div.address {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .location i,
+    .phone i,
+    .email i {
+        font-size: 40px;
+    }
+
+    .location p {
+        font-size: 16px;
+    }
+
+    .phone p,
+    .email p {
+        font-size: 16px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .left {
+        padding: 30px 0;
+    }
+
+    .left a {
+        margin: 2%;
+    }
+}
+
+@media(max-width: 415px) and (orientation: portrait) {
+    div.nav-phone {
+        width: 45%;
+    }
+
+    div.footer p {
+        font-size: 10px;
+    }
+}
